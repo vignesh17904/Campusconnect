@@ -1,0 +1,1132 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2712454,
+        "lat": 13.0813653,
+        "state_code": "TN",
+        "formatted": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "General Hospital Road",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10200998179,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 282,
+        "place_id": "51308caa155c1154405996606ab6a8292a40f00103f90123e1066002000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2712454,
+          13.08136529968787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2711971,
+        "lat": 13.0812429,
+        "state_code": "TN",
+        "formatted": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "General Hospital Road",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10201010890,
+            "historic": "memorial",
+            "osm_type": "n"
+          }
+        },
+        "historic": {
+          "type": "memorial"
+        },
+        "distance": 292,
+        "place_id": "5147d1144b5b1154405919625aab98292a40f00103f901ca12076002000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27119709999998,
+          13.081242899687867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "George Frederick Samuel Robinson, 1st Marquess of Ripon",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2712701,
+        "lat": 13.0812662,
+        "state_code": "TN",
+        "formatted": "George Frederick Samuel Robinson, 1st Marquess of Ripon, General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "George Frederick Samuel Robinson, 1st Marquess of Ripon",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "George Frederick Samuel Robinson, 1st Marquess of Ripon",
+            "osm_id": 10200998178,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 293,
+        "place_id": "517df8437d5c11544059f1db2bb99b292a40f00103f90122e106600200000092033747656f7267652046726564657269636b2053616d75656c20526f62696e736f6e2c20317374204d61727175657373206f66205269706f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2712701,
+          13.081266199687862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cannon",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2713741,
+        "lat": 13.0812606,
+        "state_code": "TN",
+        "formatted": "Cannon, General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Cannon",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial"
+        ],
+        "details": [
+          "details.historic"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Cannon",
+            "osm_id": 10200998180,
+            "historic": "memorial",
+            "memorial": "cannon",
+            "osm_type": "n"
+          }
+        },
+        "historic": {
+          "type": "memorial",
+          "memorial": "cannon"
+        },
+        "distance": 298,
+        "place_id": "51d01e79315e11544059b93944fd9a292a40f00103f90124e106600200000092030643616e6e6f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2713741,
+          13.081260599687868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pitti Theagaraya Chetty",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.271652,
+        "lat": 13.0813928,
+        "state_code": "TN",
+        "formatted": "Pitti Theagaraya Chetty, General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Pitti Theagaraya Chetty",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Pitti Theagaraya Chetty",
+            "osm_id": 8634822101,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 300,
+        "place_id": "5126f911bf621154405921942951ac292a40f00103f901d5edac02020000009203175069747469205468656167617261796120436865747479"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27165199999999,
+          13.081392799687878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2720296,
+        "lat": 13.081527,
+        "state_code": "TN",
+        "formatted": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "General Hospital Road",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10201011044,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 312,
+        "place_id": "51d0e2d6ee68115440590fcd2ae8bd292a40f00103f9016413076002000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2720296,
+          13.081526999687894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cannon",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2719592,
+        "lat": 13.0813815,
+        "state_code": "TN",
+        "formatted": "Cannon, General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Cannon",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial"
+        ],
+        "details": [
+          "details.historic"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Cannon",
+            "osm_id": 10201011158,
+            "historic": "memorial",
+            "memorial": "cannon",
+            "osm_type": "n"
+          }
+        },
+        "historic": {
+          "type": "memorial",
+          "memorial": "cannon"
+        },
+        "distance": 320,
+        "place_id": "5129768fc767115440595051ffd5aa292a40f00103f901d61307600200000092030643616e6e6f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27195919999998,
+          13.081381499687865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2720532,
+        "lat": 13.0814219,
+        "state_code": "TN",
+        "formatted": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "General Hospital Road",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10201011043,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 323,
+        "place_id": "516b31d3516911544059dcac9821b0292a40f00103f9016313076002000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2720532,
+          13.081421899687875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sir Charles Trevelyan Memorial",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Periamet",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2729492,
+        "lat": 13.0820557,
+        "state_code": "TN",
+        "formatted": "Sir Charles Trevelyan Memorial, General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Sir Charles Trevelyan Memorial",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Sir Charles Trevelyan Memorial",
+            "osm_id": 9980931988,
+            "historic": "memorial",
+            "osm_type": "n"
+          }
+        },
+        "historic": {
+          "type": "memorial"
+        },
+        "distance": 350,
+        "place_id": "510adeebff771154405961386534032a2a40f00103f90194efe8520200000092031e53697220436861726c65732054726576656c79616e204d656d6f7269616c"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2729492,
+          13.082055699687944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Central Square",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "CMWSSB Division 58",
+        "suburb": "Zone 5 Royapuram",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2743705,
+        "lat": 13.0818754,
+        "state_code": "TN",
+        "formatted": "Central Square, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Central Square",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.square"
+        ],
+        "details": [
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Central Square",
+            "place": "square",
+            "osm_id": 11039309345,
+            "osm_type": "n",
+            "wikidata": "Q23249034",
+            "wikipedia": "en:Central Square, Chennai"
+          }
+        },
+        "wiki_and_media": {
+          "wikidata": "Q23249034",
+          "wikipedia": "en:Central Square, Chennai"
+        },
+        "distance": 496,
+        "place_id": "512e1f49498f115440595d038892eb292a40f00103f901217efe910200000092030e43656e7472616c20537175617265"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2743705,
+          13.081875399687926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "mvc",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "CMWSSB Division 58",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Vepery High Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2649747,
+        "lat": 13.0846553,
+        "state_code": "TN",
+        "formatted": "mvc, Vepery High Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "mvc",
+        "address_line2": "Vepery High Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.viewpoint"
+        ],
+        "details": [
+          "details"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 4377811599,
+            "name:en": "mvc",
+            "tourism": "viewpoint",
+            "osm_type": "n"
+          }
+        },
+        "name_international": {
+          "en": "mvc"
+        },
+        "distance": 575,
+        "place_id": "511eb17158f5105440591f307ff0572b2a40f00103f9018f1af00401000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.26497470000001,
+          13.08465529968822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Southern Railways Headquarters",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600003",
+        "district": "CMWSSB Division 59",
+        "suburb": "Zone 5 Royapuram",
+        "street": "General Hospital Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.27760100989283,
+        "lat": 13.0825229,
+        "state_code": "TN",
+        "formatted": "Southern Railways Headquarters, General Hospital Road, Zone 5 Royapuram, Chennai - 600003, Tamil Nadu, India",
+        "address_line1": "Southern Railways Headquarters",
+        "address_line2": "General Hospital Road, Zone 5 Royapuram, Chennai - 600003, Tamil Nadu, India",
+        "categories": [
+          "building",
+          "building.historic",
+          "building.office",
+          "office",
+          "office.government",
+          "tourism",
+          "tourism.sights"
+        ],
+        "details": [
+          "details",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Southern Railways Headquarters",
+            "office": "government",
+            "osm_id": -60175,
+            "name:hi": "दक्षिण रेलवे मुख्यालय",
+            "name:ta": "தென்னக இரயில்வே தலைமையகம்",
+            "building": "office",
+            "historic": "yes",
+            "osm_type": "r",
+            "wikidata": "Q7570377",
+            "wikipedia": "en:Southern Railway Headquarters, Chennai",
+            "addr:postcode": 600003
+          }
+        },
+        "name_international": {
+          "hi": "दक्षिण रेलवे मुख्यालय",
+          "ta": "தென்னக இரயில்வே தலைமையகம்"
+        },
+        "wiki_and_media": {
+          "wikidata": "Q7570377",
+          "wikipedia": "en:Southern Railway Headquarters, Chennai"
+        },
+        "building": {
+          "type": "office"
+        },
+        "distance": 689,
+        "place_id": "51e1b40637c4115440597ea90671402a2a40f00101f9010feb00000000000092031e536f75746865726e205261696c7761797320486561647175617274657273"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27760100989282,
+          13.082522899687998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Evening Bazaar",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Stanley Viaduct",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2749968,
+        "lat": 13.0783235,
+        "state_code": "TN",
+        "formatted": "Stanley Viaduct, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Stanley Viaduct",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial",
+          "tourism.sights.memorial.wayside_cross"
+        ],
+        "details": [
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 8291990083,
+            "historic": "wayside_cross",
+            "osm_type": "n",
+            "religion": "christian",
+            "denomination": "catholic"
+          }
+        },
+        "historic": {
+          "type": "wayside_cross"
+        },
+        "place_of_worship": {
+          "religion": "christian",
+          "denomination": "catholic"
+        },
+        "distance": 791,
+        "place_id": "514ca02d8c991154405920558b041a282a40f00103f90143ba3dee01000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2749968,
+          13.078323499687542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Annai Maniammai Statue",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Ward 61",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Whannels Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2628411,
+        "lat": 13.0800561,
+        "state_code": "TN",
+        "formatted": "Annai Maniammai Statue, Whannels Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Annai Maniammai Statue",
+        "address_line2": "Whannels Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial",
+          "tourism.sights.memorial.monument"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Annai Maniammai Statue",
+            "osm_id": 304918810,
+            "historic": "monument",
+            "osm_type": "n"
+          }
+        },
+        "historic": {
+          "type": "monument"
+        },
+        "distance": 892,
+        "place_id": "51db227a63d2105440591802f41cfd282a40f00103f9011ab12c1200000000920316416e6e6169204d616e69616d6d616920537461747565"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.26284109999999,
+          13.080056099687724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zion Church",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "CMWSSB Division 62",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Laffond Street",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2719740171872,
+        "lat": 13.075224500000001,
+        "state_code": "TN",
+        "formatted": "Zion Church, Laffond Street, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Zion Church",
+        "address_line2": "Laffond Street, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "building",
+          "building.historic",
+          "building.place_of_worship",
+          "religion",
+          "religion.place_of_worship",
+          "religion.place_of_worship.christianity",
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.place_of_worship",
+          "tourism.sights.place_of_worship.church"
+        ],
+        "details": [
+          "details.place_of_worship",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Zion Church",
+            "osm_id": 214698560,
+            "amenity": "place_of_worship",
+            "building": "yes",
+            "historic": "church",
+            "osm_type": "w",
+            "religion": "christian",
+            "wikidata": "Q55638257",
+            "wikipedia": "en:Zion Church, Chintadripet"
+          }
+        },
+        "wiki_and_media": {
+          "wikidata": "Q55638257",
+          "wikipedia": "en:Zion Church, Chintadripet"
+        },
+        "historic": {
+          "type": "church"
+        },
+        "place_of_worship": {
+          "religion": "christian"
+        },
+        "distance": 941,
+        "place_id": "51904bb505681154405974075cd383262a40f00102f901400acc0c0000000092030b5a696f6e20436875726368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27197401718718,
+          13.075224499687216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maveeran Alagumuthu Kone",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "CMWSSB Division 61",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Gandhi Irwin Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2633338,
+        "lat": 13.0781956,
+        "state_code": "TN",
+        "formatted": "Maveeran Alagumuthu Kone, Gandhi Irwin Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Maveeran Alagumuthu Kone",
+        "address_line2": "Gandhi Irwin Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Maveeran Alagumuthu Kone",
+            "osm_id": 10942180763,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 960,
+        "place_id": "519bbb0276da10544059b7b2ee4009282a40f00103f9019b6d348c020000009203184d6176656572616e20416c6167756d75746875204b6f6e65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.26333379999998,
+          13.07819559968753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thamarapakkam Sundara Rao Naidu",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Mahaveer Colony",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Gandhi Irwin Bridge Road",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2653593,
+        "lat": 13.0763982,
+        "state_code": "TN",
+        "formatted": "Thamarapakkam Sundara Rao Naidu, Gandhi Irwin Bridge Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Thamarapakkam Sundara Rao Naidu",
+        "address_line2": "Gandhi Irwin Bridge Road, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Thamarapakkam Sundara Rao Naidu",
+            "osm_id": 10139491405,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 962,
+        "place_id": "5120cc92a5fb10544059c54232aa1d272a40f00103f9014d5c5c5c0200000092031f5468616d61726170616b6b616d2053756e646172612052616f204e61696475"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2653593,
+          13.076398199687342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Periyar",
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Mahaveer Colony",
+        "suburb": "Zone 5 Royapuram",
+        "street": "EVK Sampath Salai",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2615946,
+        "lat": 13.0811899,
+        "state_code": "TN",
+        "formatted": "Periyar, EVK Sampath Salai, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Periyar",
+        "address_line2": "EVK Sampath Salai, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Periyar",
+            "osm_id": 11502638034,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 972,
+        "place_id": "51daf346f7bd105440598ad9f7b891292a40f00103f901d2539cad0200000092030750657269796172"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2615946,
+          13.08118989968786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "CMWSSB Division 59",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Akkon Das Street",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2792647,
+        "lat": 13.0887062,
+        "state_code": "TN",
+        "formatted": "Akkon Das Street, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Akkon Das Street",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.place_of_worship.shrine"
+        ],
+        "details": [
+          "details.place_of_worship"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10772530051,
+            "historic": "wayside_shrine",
+            "osm_type": "n",
+            "religion": "hindu"
+          }
+        },
+        "historic": {
+          "type": "wayside_shrine"
+        },
+        "place_of_worship": {
+          "religion": "hindu"
+        },
+        "distance": 1130,
+        "place_id": "51575b0c79df11544059fe3a25e66a2d2a40f00103f90183c3178202000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.27926469999998,
+          13.088706199688655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "country": "India",
+        "country_code": "in",
+        "state": "Tamil Nadu",
+        "county": "Chennai",
+        "city": "Chennai",
+        "postcode": "600001",
+        "district": "Flower Bazaar",
+        "suburb": "Zone 5 Royapuram",
+        "street": "Ramanan Street",
+        "iso3166_2": "IN-TN",
+        "lon": 80.2754068,
+        "lat": 13.0926516,
+        "state_code": "TN",
+        "formatted": "Ramanan Street, Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "address_line1": "Ramanan Street",
+        "address_line2": "Zone 5 Royapuram, Chennai - 600001, Tamil Nadu, India",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "osm_id": 10120269361,
+            "tourism": "artwork",
+            "osm_type": "n",
+            "artwork_type": "statue"
+          }
+        },
+        "artwork": {
+          "artwork_type": "statue"
+        },
+        "distance": 1141,
+        "place_id": "5125c6d743a011544059622ccd07702f2a40f00103f901310e375b02000000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.2754068,
+          13.09265159968908
+        ]
+      }
+    }
+  ]
+}

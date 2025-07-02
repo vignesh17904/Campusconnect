@@ -1,0 +1,146 @@
+hotel = 
+{
+    type: "Feature"
+    properties:
+    name: "Holiday Inn Express Hyderabad HITEC City"
+    country: "India"
+    country_code: "in"
+    state: "Telangana"
+    county: "Serilingampalle mandal"
+    state_district: "Ranga Reddy"
+    city: "Hyderabad"
+    postcode: "500081"
+    district: "Greater Hyderabad Municipal Corporation West Zone"
+    neighbourhood: "Whitefields"
+    suburb: "Ward 104 Kondapur"
+    street: "Hitech city Madhapur road"
+    housenumber: "35"
+    iso3166_2: "IN-TS"
+    lon: 78.37321759516507
+    lat: 17.447544450000002
+    state_code: "TG"
+    formatted: "Holiday Inn Express Hyderabad HITEC City, 35, Hitech city Madhapur road, Ward 104 Kondapur, Hyderabad - 500081, Telangana, India"
+    address_line1: "Holiday Inn Express Hyderabad HITEC City"
+    address_line2: "35, Hitech city Madhapur road, Ward 104 Kondapur, Hyderabad - 500081, Telangana, India"
+    categories:
+    0: "accommodation"
+    1: "accommodation.hotel"
+    2: "internet_access"
+    3: "internet_access.free"
+    4: "wheelchair"
+    5: "wheelchair.yes"
+    details:
+    0: "details"
+    1: "details.contact"
+    2: "details.facilities"
+    3: "details.payment"
+    datasource:
+    sourcename: "openstreetmap"
+    attribution: "© OpenStreetMap contributors"
+    license: "Open Database License"
+    url: "https://www.openstreetmap.org/copyright"
+    raw:
+    name: "Holiday Inn Express Hyderabad HITEC City"
+    brand: "Holiday Inn Express"
+    phone: "+91 040-71330330"
+    osm_id: 1152313422
+    tourism: "hotel"
+    website: "https://www.ihg.com/holidayinnexpress/hotels/us/en/hyderabad/hydtc/hoteldetail"
+    osm_type: "w"
+    addr:city: "Hyderabad"
+    wheelchair: "yes"
+    addr:street: "Phoenix Avance Business Park"
+    description: "Holiday Inn Express Hyderabad HITEC City is located in Madhapur in the heart of Hitec City and strategically located adjacent to Phoenix SEZ Hyderabads Major IT hub."
+    payment:jcb: "yes"
+    payment:visa: "yes"
+    addr:postcode: 500081
+    brand:wikidata: "Q5880423"
+    internet_access: "wlan"
+    addr:housenumber: 35
+    payment:mastercard: "yes"
+    internet_access:fee: "no"
+    payment:diners_club: "yes"
+    payment:credit_cards: "yes"
+    payment:american_express: "yes"
+    website: "https://www.ihg.com/holidayinnexpress/hotels/us/en/hyderabad/hydtc/hoteldetail"
+    brand: "Holiday Inn Express"
+    brand_details:
+    wikidata: "Q5880423"
+    description: "Holiday Inn Express Hyderabad HITEC City is located in Madhapur in the heart of Hitec City and strategically located adjacent to Phoenix SEZ Hyderabads Major IT hub."
+    contact:
+    phone: "+91 040-71330330"
+    facilities:
+    internet_access: true
+    wheelchair: true
+    payment_options:
+    jcb: true
+    visa: true
+    mastercard: true
+    diners_club: true
+    credit_cards: true
+    american_express: true
+    place_id: "51a6610dcce2975340590809e94592723140f00102f9014ee8ae4400000000920328486f6c6964617920496e6e2045787072657373204879646572616261642048495445432043697479"
+    geometry:
+    type: "Point"
+    coordinates:
+    0: 78.37321759516507
+    1: 17.44754445018137
+}
+
+
+touristplace = 
+{
+    type: "Feature"
+    properties:
+    name: "Moula Ali Dargah"
+    country: "India"
+    country_code: "in"
+    state: "Telangana"
+    county: "Malkajgiri mandal"
+    state_district: "Medchal–Malkajgiri"
+    city: "Hyderabad"
+    postcode: "500056"
+    district: "Greater Hyderabad Municipal Corporation North Zone"
+    neighbourhood: "Geetha Nagar"
+    suburb: "Ward 138 Moula Ali"
+    street: "vinayak nagar road"
+    iso3166_2: "IN-TS"
+    lon: 78.55669225854466
+    lat: 17.46875395
+    state_code: "TG"
+    formatted: "Moula Ali Dargah, vinayak nagar road, Ward 138 Moula Ali, Hyderabad - 500056, Telangana, India"
+    address_line1: "Moula Ali Dargah"
+    address_line2: "vinayak nagar road, Ward 138 Moula Ali, Hyderabad - 500056, Telangana, India"
+    categories:
+    0: "building"
+    1: "building.historic"
+    2: "tourism"
+    3: "tourism.sights"
+    details:
+    0: "details.place_of_worship"
+    1: "details.wiki_and_media"
+    datasource:
+    sourcename: "openstreetmap"
+    attribution: "© OpenStreetMap contributors"
+    license: "Open Database License"
+    url: "https://www.openstreetmap.org/copyright"
+    raw:
+    name: "Moula Ali Dargah"
+    osm_id: 357991201
+    building: "yes"
+    historic: "yes"
+    osm_type: "w"
+    religion: "muslim"
+    wikidata: "Q125784778"
+    wiki_and_media:
+    wikidata: "Q125784778"
+    place_of_worship:
+    religion: "muslim"
+    place_id: "51af1891d8a0a3534059a9e8454200783140f00102f90121835615000000009203104d6f756c6120416c6920446172676168"
+    geometry:
+    type: "Point"
+    coordinates:
+    0: 78.55669225854466
+    1: 17.468753950183473
+}
+
