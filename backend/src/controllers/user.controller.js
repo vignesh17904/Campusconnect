@@ -70,7 +70,14 @@ const signUp = asyncHandler(async (req, res) => {
 });
 
 
-const verifyEmail = asyncHandler(async (req, res) => {
+import { User } from "../models/user.model.js";
+import { Group } from "../models/group.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
+import { generateAccessandRefreshtokens } from "../utils/jwtUtils.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+
+export const verifyEmail = asyncHandler(async (req, res) => {
   const { email, token } = req.body;
 
   const user = await User.findOne({ email });
@@ -90,13 +97,36 @@ const verifyEmail = asyncHandler(async (req, res) => {
   user.emailVerified = true;
   user.verificationToken = undefined;
   user.verificationTokenExpiry = undefined;
+
+  const groupName = `${user.branch}-${user.year}`;
+  let group = await Group.findOne({ branch: user.branch, year: user.year });
+
+  if (!group) {
+    group = await Group.create({
+      name: groupName,
+      branch: user.branch,
+      year: user.year,
+      members: [user._id],
+    });
+  } else {
+    if (!group.members.includes(user._id)) {
+      group.members.push(user._id);
+      await group.save();
+    }
+  }
+
+  // Push group reference to user's groups array
+  if (!user.groups.some((g) => g._id.toString() === group._id.toString())) {
+    user.groups.push({ _id: group._id, name: group.name });
+  }
+
   await user.save({ validateBeforeSave: false });
 
   const { accessToken, refreshToken } = await generateAccessandRefreshtokens(user.username);
 
   const options = {
     httpOnly: true,
-    secure: true
+    secure: true,
   };
 
   res
@@ -106,10 +136,11 @@ const verifyEmail = asyncHandler(async (req, res) => {
       new ApiResponse(
         200,
         { user, accessToken, refreshToken },
-        "Email verified and logged in"
+        "Email verified, group assigned and logged in"
       )
     );
 });
+
 const login = asyncHandler(async (req, res) => {
   const { username, password } = req.body;
 

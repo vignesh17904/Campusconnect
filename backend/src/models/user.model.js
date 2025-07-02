@@ -4,10 +4,7 @@ import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
   {
-    fullName: {
-      type: String,
-      trim: true,
-    },
+    fullName: { type: String, trim: true },
     username: {
       type: String,
       required: true,
@@ -27,49 +24,41 @@ const userSchema = new Schema(
       type: String,
       default: "/user-profile-icon-placeholder.jpg",
     },
-    password: {
-      type: String,
-    },
-    refreshToken: {
-      type: String,
-    },
+    password: { type: String },
+    refreshToken: { type: String },
     role: {
       type: String,
       enum: ["user", "admin", "hotelowner"],
       default: "user",
-       required: true,
     },
-    isGoogleUser: {
-      type: Boolean,
-      default: false,
-    },
-    emailVerified: {
-      type: Boolean,
-      default: false,
-    },
-    verificationToken: {
-      type: String,
-    },
-    verificationTokenExpiry: {
-      type: Date,
-    },
-    // 
+    isGoogleUser: { type: Boolean, default: false },
+    emailVerified: { type: Boolean, default: false },
+    verificationToken: { type: String },
+    verificationTokenExpiry: { type: Date },
+
     branch: {
       type: String,
-      enum: ["CSE", "ECE", "MECH", "EEE", "CIVIL", "CHEM", "MME", "BIOTECH"], 
-       required: true,
+      enum: ["CSE", "ECE", "EEE", "MECH"],
+      required: true,
     },
     year: {
       type: Number,
       min: 1,
       max: 4,
-       required: true,
+      required: true,
     },
     rollNumber: {
       type: String,
+      required: true,
       trim: true,
-       required: true,
     },
+
+    groups: [
+      {
+        _id: { type: mongoose.Schema.Types.ObjectId, ref: "Group" },
+        name: { type: String },
+      },
+    ],
   },
   { timestamps: true }
 );
@@ -89,9 +78,7 @@ userSchema.methods.generateAccessToken = function () {
       role: this.role,
     },
     process.env.ACCESS_TOKEN_SECRET,
-    {
-      expiresIn: process.env.ACCESS_TOKEN_EXPIRY || "15m",
-    }
+    { expiresIn: process.env.ACCESS_TOKEN_EXPIRY || "15m" }
   );
 };
 
@@ -102,9 +89,7 @@ userSchema.methods.generateRefreshToken = function () {
       email: this.email,
     },
     process.env.REFRESH_TOKEN_SECRET,
-    {
-      expiresIn: process.env.REFRESH_TOKEN_EXPIRY || "7d",
-    }
+    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY || "7d" }
   );
 };
 
