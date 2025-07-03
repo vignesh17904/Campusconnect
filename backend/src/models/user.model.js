@@ -28,7 +28,7 @@ const userSchema = new Schema(
     refreshToken: { type: String },
     role: {
       type: String,
-      enum: ["user", "admin", "hotelowner"],
+      enum: ["user", "admin"],
       default: "user",
     },
     isGoogleUser: { type: Boolean, default: false },

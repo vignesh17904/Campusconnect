@@ -1,6 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import {ApiError} from "../utils/ApiError.js"
 import { User} from "../models/user.model.js";
+import { Group } from "../models/group.model.js";
 import axios from "axios";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
@@ -68,16 +69,7 @@ const signUp = asyncHandler(async (req, res) => {
 
   return res.status(201).json(new ApiResponse(201, {}, "Verification email sent"));
 });
-
-
-import { User } from "../models/user.model.js";
-import { Group } from "../models/group.model.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
-import { ApiError } from "../utils/ApiError.js";
-import { generateAccessandRefreshtokens } from "../utils/jwtUtils.js";
-import { asyncHandler } from "../utils/asyncHandler.js";
-
-export const verifyEmail = asyncHandler(async (req, res) => {
+ const verifyEmail = asyncHandler(async (req, res) => {
   const { email, token } = req.body;
 
   const user = await User.findOne({ email });
@@ -98,28 +90,29 @@ export const verifyEmail = asyncHandler(async (req, res) => {
   user.verificationToken = undefined;
   user.verificationTokenExpiry = undefined;
 
-  const groupName = `${user.branch}-${user.year}`;
-  let group = await Group.findOne({ branch: user.branch, year: user.year });
+const groupName = `${user.branch}-${user.year}`;
 
-  if (!group) {
-    group = await Group.create({
+const group = await Group.findOneAndUpdate(
+  { branch: user.branch, year: user.year },
+  {
+    $setOnInsert: {
       name: groupName,
       branch: user.branch,
       year: user.year,
-      members: [user._id],
-    });
-  } else {
-    if (!group.members.includes(user._id)) {
-      group.members.push(user._id);
-      await group.save();
-    }
+    },
+    $addToSet: { members: user._id },
+  },
+  {
+    new: true,
+    upsert: true,
   }
+);
 
-  // Push group reference to user's groups array
-  if (!user.groups.some((g) => g._id.toString() === group._id.toString())) {
-    user.groups.push({ _id: group._id, name: group.name });
-  }
 
+ 
+ await User.findByIdAndUpdate(user._id, {
+  $addToSet: { groups: { _id: group._id, name: group.name } }
+});
   await user.save({ validateBeforeSave: false });
 
   const { accessToken, refreshToken } = await generateAccessandRefreshtokens(user.username);

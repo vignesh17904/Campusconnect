@@ -26,5 +26,5 @@ const groupSchema = new Schema(
   },
   { timestamps: true }
 );
-
+groupSchema.index({ branch: 1, year: 1 }, { unique: true });
 export const Group = mongoose.model("Group", groupSchema);

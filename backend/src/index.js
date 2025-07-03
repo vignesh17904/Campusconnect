@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import connectDB from "./db/index.js";
+import connectDB,{createAdminIfNotExists} from "./db/index.js";
 import { app } from "./app.js";
 import http from "http";
 import { Server } from "socket.io";
@@ -56,3 +56,5 @@ connectDB()
   .catch((error) => {
     console.log("Mongo connection failed", error);
   });
+/*createAdminIfNotExists()*/
+  
