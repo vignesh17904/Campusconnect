@@ -59,7 +59,19 @@ const userSchema = new Schema(
         name: { type: String },
       },
     ],
+    notifications: [
+  {
+    type: { type: String, enum: ["group-join-request", "personal-request"], required: true },
+    message: { type: String, required: true },
+    fromUser: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    groupId: { type: mongoose.Schema.Types.ObjectId, ref: "Group" },
+    seen: { type: Boolean, default: false },
+    createdAt: { type: Date, default: Date.now },
+  }
+],
+
   },
+  
   { timestamps: true }
 );
 

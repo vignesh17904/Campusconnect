@@ -27,5 +27,7 @@ import userRouter from './routes/user.routes.js';
 app.use("/api/users",userRouter)
 import messageRouter from './routes/message.routes.js';
 app.use("/api/messages", messageRouter);
+import groupRouter from './routes/group.routes.js';
+app.use("/api/groups", groupRouter);
 
 export { app };

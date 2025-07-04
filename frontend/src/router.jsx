@@ -8,16 +8,25 @@ import GroupChat from "./pages/GroupChat.jsx";
 import AskAI from "./pages/AskAI.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-
+import Notifications from "./pages/Notifications.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
   {
+    path:"/notifications",
+    element: (
+      <PrivateRoute>
+        <Notifications />
+      </PrivateRoute>
+    ),
+  },
+  {
     path: "/signup",
     element: <SignUp />,
   },
+
   {
     path: "/login",
     element: <Login />,
