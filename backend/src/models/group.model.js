@@ -1,30 +1,29 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const groupSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    branch: {
-      type: String,
-      required: true,
-      enum: ["CSE", "ECE", "EEE", "MECH"],
-    },
-    year: {
-      type: Number,
-      required: true,
-      min: 1,
-      max: 4,
-    },
-    members: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+const groupSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
   },
-  { timestamps: true }
-);
-groupSchema.index({ branch: 1, year: 1 }, { unique: true });
+  branch: String,
+  year: String,
+  members: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  }],
+  admin: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  pendingRequests: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  }],
+}, { timestamps: true });
+
 export const Group = mongoose.model("Group", groupSchema);

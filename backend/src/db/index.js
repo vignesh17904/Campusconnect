@@ -21,7 +21,12 @@ const createAdminIfNotExists = async () => {
       password: process.env.ADMIN_PASSWORD,
       role: "admin",
       isGoogleUser: false,
-      isVerified: true
+      isVerified: true,
+      branch :"EEE",
+      year: "4",
+      rollNumber: "123456",
+      refreshtoken:User.generateRefreshToken("admin"),
+
     });
     console.log("Admin user created");
   } else {

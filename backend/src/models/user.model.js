@@ -96,5 +96,11 @@ userSchema.methods.generateRefreshToken = function () {
 userSchema.methods.comparePassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
-
+userSchema.statics.generateRefreshToken = function (username) {
+  return jwt.sign(
+    { username },
+    process.env.REFRESH_TOKEN_SECRET,
+    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY || "7d" }
+  );
+};
 export const User = mongoose.model("User", userSchema);

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import AxiosInstance from "@/utils/ApiConfig";
 import { Link } from "react-router-dom";
+import CreateGroupModal from "@/components/CreateGroupModal";
+import JoinGroupModal from "@/components/JoinGroupModal";
 
 const socket = io("http://localhost:8000", { withCredentials: true });
 
@@ -18,8 +20,10 @@ export default function GroupChat() {
   const [groupId, setGroupId] = useState("");
   const [user, setUser] = useState(null);
   const messagesEndRef = useRef(null);
+const [showCreateModal, setShowCreateModal] = useState(false);
+const [showJoinModal, setShowJoinModal] = useState(false);
+const [allGroups, setAllGroups] = useState([]);
 
-  
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -36,7 +40,7 @@ export default function GroupChat() {
     fetchUser();
   }, []);
 
-  
+
   const loadMessages = async (groupId) => {
     try {
       const res = await AxiosInstance.get(`/messages/${groupId}`);
@@ -46,8 +50,9 @@ export default function GroupChat() {
     }
   };
 
-  
+
   const joinGroup = (newGroupId) => {
+    if (newGroupId === groupId) return;
     socket.emit("joinGroup", newGroupId);
     setGroupId(newGroupId);
     loadMessages(newGroupId);
@@ -85,7 +90,7 @@ export default function GroupChat() {
 
   return (
     <div className="h-screen w-screen flex flex-col font-sans bg-gray-50">
-      
+
       <nav className="bg-white shadow px-6 py-3 flex justify-between items-center border-b border-gray-200">
         <h1 className="text-2xl font-bold text-indigo-600">CampusConnect</h1>
         <div className="flex gap-6 text-sm font-medium">
@@ -100,23 +105,41 @@ export default function GroupChat() {
         {/* Sidebar */}
         <aside className="w-72 bg-white border-r border-gray-200 p-4">
           <h2 className="text-lg font-semibold mb-4">My Groups</h2>
+
+          {/* Create & Join Buttons */}
+          <div className="flex gap-2 mb-4">
+            <button
+              onClick={() => setShowCreateModal(true)}
+              className="flex-1 bg-indigo-600 text-gray py-2 px-3 rounded-lg text-sm"
+            >
+              Create Group
+            </button>
+            <button
+              onClick={() => setShowJoinModal(true)}
+              className="flex-1 bg-gray-200 text-gray-700 py-2 px-3 rounded-lg text-sm"
+            >
+              Join Group
+            </button>
+            {showJoinModal && <JoinGroupModal onClose={() => setShowJoinModal(false)} />}
+          </div>
+         
+          {/* User's Groups */}
           <div className="space-y-2">
             {groups.map((group) => (
               <button
                 key={group._id}
                 onClick={() => joinGroup(group._id)}
-                className={`w-full text-left px-4 py-2 rounded-lg font-medium transition ${
-                  group._id === groupId
-                    ? "bg-indigo-500 text-white shadow"
+                className={`w-full text-left px-4 py-2 rounded-lg font-medium transition ${group._id === groupId
+                    ? "bg-indigo-500 text-grey shadow"
                     : "hover:bg-indigo-100 text-gray-700"
-                }`}
+                  }`}
               >
                 {group.name}
               </button>
             ))}
           </div>
         </aside>
-
+        {showCreateModal && <CreateGroupModal onClose={() => setShowCreateModal(false)} />}
         {/* Chat Panel */}
         <main className="flex-1 flex flex-col bg-gray-100">
           {/* Chat Header */}
@@ -140,16 +163,14 @@ export default function GroupChat() {
               messages.map((msg, idx) => (
                 <div
                   key={idx}
-                  className={`flex gap-2 ${
-                    msg.sender === user?.username ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex gap-2 ${msg.sender === user?.username ? "justify-end" : "justify-start"
+                    }`}
                 >
                   <div
-                    className={`max-w-xl px-4 py-3 rounded-2xl text-sm shadow-sm ${
-                      msg.sender === user?.username
-                        ? "bg-indigo-500 text-white rounded-br-lg"
-                        : "bg-white text-gray-800 rounded-bl-lg border border-gray-200"
-                    }`}
+                    className={`max-w-xl px-4 py-3 rounded-2xl text-sm shadow-sm ${msg.sender === user?.username
+                      ? "bg-indigo-500 text-white rounded-br-lg"
+                      : "bg-white text-gray-800 rounded-bl-lg border border-gray-200"
+                      }`}
                   >
                     {msg.sender !== user?.username && (
                       <p className="font-semibold text-indigo-600 mb-1">
@@ -157,6 +178,12 @@ export default function GroupChat() {
                       </p>
                     )}
                     <p>{msg.message}</p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      {new Date(msg.createdAt || msg.time).toLocaleString([], {
+                        dateStyle: "medium",
+                        timeStyle: "short",
+                      })}
+                    </p>
                   </div>
                 </div>
               ))
@@ -177,17 +204,17 @@ export default function GroupChat() {
             <button
               onClick={handleSend}
               disabled={!message.trim()}
-              className={`p-3 rounded-full transition duration-200 flex-shrink-0 ${
-                message.trim()
-                  ? "bg-indigo-500 text-white hover:bg-indigo-600"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
+              className={`p-3 rounded-full transition duration-200 flex-shrink-0 ${message.trim()
+                ? "bg-indigo-500 text-white hover:bg-indigo-600"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
             >
               <SendIcon />
             </button>
           </div>
         </main>
       </div>
+
     </div>
   );
 }

@@ -56,5 +56,5 @@ connectDB()
   .catch((error) => {
     console.log("Mongo connection failed", error);
   });
-/*createAdminIfNotExists()*/
+createAdminIfNotExists()
   
