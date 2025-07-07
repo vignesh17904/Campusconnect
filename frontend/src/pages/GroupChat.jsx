@@ -4,7 +4,7 @@ import AxiosInstance from "@/utils/ApiConfig";
 import { Link } from "react-router-dom";
 import CreateGroupModal from "@/components/CreateGroupModal";
 import JoinGroupModal from "@/components/JoinGroupModal";
-
+import Navbar from "../components/Navbar";
 const socket = io("http://localhost:8000", { withCredentials: true });
 
 const SendIcon = () => (
@@ -91,7 +91,7 @@ const [allGroups, setAllGroups] = useState([]);
   return (
     <div className="h-screen w-screen flex flex-col font-sans bg-gray-50">
 
-      <nav className="bg-white shadow px-6 py-3 flex justify-between items-center border-b border-gray-200">
+      {/*<nav className="bg-white shadow px-6 py-3 flex justify-between items-center border-b border-gray-200">
         <h1 className="text-2xl font-bold text-indigo-600">CampusConnect</h1>
         <div className="flex gap-6 text-sm font-medium">
           <Link to="/chat-group" className="text-indigo-600 border-b-2 border-indigo-600 pb-1">Chat</Link>
@@ -100,7 +100,10 @@ const [allGroups, setAllGroups] = useState([]);
           <Link to="/notifications" className="text-gray-600 hover:text-indigo-600">Notifications</Link>
 
         </div>
-      </nav>
+      </nav>*/}
+      <Navbar />
+
+      
 
       {/* Main layout */}
       <div className="flex flex-1 overflow-hidden">

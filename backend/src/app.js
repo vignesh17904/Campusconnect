@@ -29,5 +29,9 @@ import messageRouter from './routes/message.routes.js';
 app.use("/api/messages", messageRouter);
 import groupRouter from './routes/group.routes.js';
 app.use("/api/groups", groupRouter);
+import questionRouter from "./routes/question.routes.js";
+app.use("/api/questions", questionRouter);
+import answerRouter from "./routes/answer.routes.js";
+app.use("/api/answers", answerRouter);
 
 export { app };

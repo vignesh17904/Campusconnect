@@ -9,13 +9,16 @@ import AskAI from "./pages/AskAI.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import Notifications from "./pages/Notifications.jsx";
+import QuestionDetails from "./pages/QuestionDetails.jsx";
+import Community from "./pages/Community.jsx";
+import AskQuestion from "./pages/AskQuestion.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
   {
-    path:"/notifications",
+    path: "/notifications",
     element: (
       <PrivateRoute>
         <Notifications />
@@ -26,7 +29,14 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp />,
   },
-
+  {
+    path:"/community",
+    element:(
+      <PrivateRoute>
+        <Community />
+      </PrivateRoute>
+    )
+  },
   {
     path: "/login",
     element: <Login />,
@@ -44,6 +54,22 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <Dashboard />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/community/question/:questionId",
+    element: (
+      <PrivateRoute>
+        <QuestionDetails />
+      </PrivateRoute>
+    ),
+  },
+   {
+    path: "/community/question/ask-question",
+    element: (
+      <PrivateRoute>
+       <AskQuestion />
       </PrivateRoute>
     ),
   },
