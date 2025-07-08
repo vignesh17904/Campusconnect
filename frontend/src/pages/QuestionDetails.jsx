@@ -10,40 +10,35 @@ export default function QuestionDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // New states for answer form
   const [showAnswerForm, setShowAnswerForm] = useState(false);
   const [newAnswer, setNewAnswer] = useState("");
   const [posting, setPosting] = useState(false);
 
   useEffect(() => {
-    const fetchDetails = async () => {
-      try {
-        const res = await axiosInstance.get(`/questions/${questionId}`);
-        setQuestion(res.data.data.question);
-        setAnswers(res.data.data.answers);
-      } catch (err) {
-        console.error("Fetch failed:", err);
-        setError("Failed to load question.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDetails();
+    fetchQuestion();
   }, [questionId]);
+
+  const fetchQuestion = async () => {
+    try {
+      const res = await axiosInstance.get(`/questions/${questionId}`);
+      setQuestion(res.data.data.question);
+      setAnswers(res.data.data.answers);
+    } catch (err) {
+      console.error("Fetch failed:", err);
+      setError("Failed to load question.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handlePostAnswer = async () => {
     if (!newAnswer.trim()) return;
-
     setPosting(true);
     try {
       await axiosInstance.post(`/answers/${questionId}`, {
         content: newAnswer.trim(),
       });
-
-      // Refetch updated answers
-      const res = await axiosInstance.get(`/questions/${questionId}`);
-      setAnswers(res.data.data.answers);
+      await fetchQuestion();
       setNewAnswer("");
       setShowAnswerForm(false);
     } catch (err) {
@@ -51,6 +46,24 @@ export default function QuestionDetails() {
       alert("Failed to post answer.");
     } finally {
       setPosting(false);
+    }
+  };
+
+  const handleVote = async (isUpvote) => {
+    try {
+      await axiosInstance.post(`/questions/${questionId}/vote`, { isUpvote });
+      await fetchQuestion();
+    } catch (err) {
+      console.error("Vote failed", err);
+    }
+  };
+
+  const handleAnswerVote = async (answerId, isUpvote) => {
+    try {
+      await axiosInstance.post(`/answers/vote/${answerId}`, { isUpvote });
+      await fetchQuestion(); // refresh data
+    } catch (err) {
+      console.error("Answer vote failed", err);
     }
   };
 
@@ -65,8 +78,7 @@ export default function QuestionDetails() {
         <h1 className="text-3xl font-bold mb-2">{question.title}</h1>
         <p className="text-gray-700 mb-4">{question.body}</p>
         <p className="text-sm text-gray-500">
-          Asked by:{" "}
-          <span className="font-medium">{question.askedBy?.username || "Anonymous"}</span>
+          Asked by: <span className="font-medium">{question.askedBy?.username || "Anonymous"}</span>
         </p>
 
         <div className="flex gap-2 my-3">
@@ -75,6 +87,22 @@ export default function QuestionDetails() {
               #{tag}
             </span>
           ))}
+        </div>
+
+        {/* Vote Buttons */}
+        <div className="flex items-center gap-4 my-4">
+          <button
+            onClick={() => handleVote(true)}
+            className="flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"
+          >
+            ⬆️ {question.upvotes?.length || 0}
+          </button>
+          <button
+            onClick={() => handleVote(false)}
+            className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+          >
+            ⬇️ {question.downvotes?.length || 0}
+          </button>
         </div>
 
         {/* Answer Button */}
@@ -119,6 +147,22 @@ export default function QuestionDetails() {
               <p className="text-xs text-gray-500 mt-2">
                 Answered by: {ans.answeredBy?.username || "Anonymous"}
               </p>
+
+              {/* Answer Vote Buttons */}
+              <div className="flex items-center gap-3 mt-2">
+                <button
+                  onClick={() => handleAnswerVote(ans._id, true)}
+                  className="flex items-center gap-1 text-green-600 hover:text-green-800 text-sm"
+                >
+                  ⬆️ {ans.upvotes?.length || 0}
+                </button>
+                <button
+                  onClick={() => handleAnswerVote(ans._id, false)}
+                  className="flex items-center gap-1 text-red-600 hover:text-red-800 text-sm"
+                >
+                  ⬇️ {ans.downvotes?.length || 0}
+                </button>
+              </div>
             </div>
           ))
         )}
@@ -126,4 +170,3 @@ export default function QuestionDetails() {
     </>
   );
 }
-

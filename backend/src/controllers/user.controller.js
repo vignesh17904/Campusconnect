@@ -93,7 +93,7 @@ const signUp = asyncHandler(async (req, res) => {
 const groupName = `${user.branch}-${user.year}`;
 
 const group = await Group.findOneAndUpdate(
-  { branch: user.branch, year: user.year },
+  { name: groupName},
   {
     $setOnInsert: {
       name: groupName,
