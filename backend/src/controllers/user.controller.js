@@ -9,7 +9,21 @@ import mongoose from "mongoose";
 import path from "path";
 import crypto from "crypto";
 import { sendEmail } from "../utils/sendEmail.js";
+import { Question } from "../models/question.model.js";
+import { Answer } from "../models/answer.model.js";
+export const getUserById = asyncHandler(async (req, res) => {
+  const { userId } = req.params;
 
+  const user = await User.findById(userId).select("username email reputation branch year rollNumber ");
+  if (!user) throw new ApiError(404, "User not found");
+
+  const questions = await Question.find({ askedBy: userId }).select("title tags createdAt");
+  const answers = await Answer.find({ answeredBy: userId }).select("text question createdAt");
+
+  return res.status(200).json(
+    new ApiResponse(200, { user, questions, answers }, "User profile fetched")
+  );
+});
 const generateAccessandRefreshtokens = async (username) => {
   try {
     const user = await User.findOne({ username });

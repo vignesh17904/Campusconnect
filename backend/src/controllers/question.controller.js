@@ -3,7 +3,7 @@ import { Answer } from "../models/answer.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
-
+import { User } from "../models/user.model.js";
 // ✅ Ask a new question
 export const askQuestion = asyncHandler(async (req, res) => {
   const { title, body, tags } = req.body;
@@ -36,7 +36,7 @@ export const getAllQuestions = asyncHandler(async (req, res) => {
     tags: q.tags,
     upvotes: q.upvotes.length,
     downvotes: q.downvotes.length,
-    askedBy: q.askedBy.username,
+    askedBy: q.askedBy,
     createdAt: q.createdAt,
     answersCount: q.answers.length,
   }));
@@ -76,32 +76,37 @@ export const voteQuestion = asyncHandler(async (req, res) => {
   const { isUpvote } = req.body;
   const userId = req.user._id;
 
-  const question = await Question.findById(questionId);
+  const question = await Question.findById(questionId).populate("askedBy", "_id");
   if (!question) {
     throw new ApiError(404, "Question not found");
   }
 
+  const author = await User.findById(question.askedBy._id);
+
   if (isUpvote) {
     if (question.upvotes.includes(userId)) {
-      // Toggle off upvote
       question.upvotes.pull(userId);
+      author.reputation -= 1;
     } else {
-      // Add upvote and remove downvote
       question.upvotes.addToSet(userId);
+      if (question.downvotes.includes(userId)) author.reputation += 2;
+      else author.reputation += 1;
       question.downvotes.pull(userId);
     }
   } else {
     if (question.downvotes.includes(userId)) {
-      // Toggle off downvote
       question.downvotes.pull(userId);
+      author.reputation += 1;
     } else {
-      // Add downvote and remove upvote
       question.downvotes.addToSet(userId);
+      if (question.upvotes.includes(userId)) author.reputation -= 2;
+      else author.reputation -= 1;
       question.upvotes.pull(userId);
     }
   }
 
   await question.save();
+  await author.save();
 
   return res.status(200).json(
     new ApiResponse(

@@ -19,7 +19,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await AxiosInstance.post("/users/login", formData);
-      navigate("/dashboard");
+      navigate("/group-chat"); 
     } catch (err) {
       setError(err?.response?.data?.message || "Login failed");
     }

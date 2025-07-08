@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "@/utils/ApiConfig";
 import NavBar from "@/components/Navbar";
-
+import { formatDistanceToNow } from "date-fns";
 export default function Community() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
@@ -22,7 +22,7 @@ export default function Community() {
 
   const handleVote = async (questionId, isUpvote) => {
     try {
-      await axiosInstance.post(`/questions/vote/${questionId}`, { isUpvote });
+      await axiosInstance.post(`/questions/${questionId}/vote`, { isUpvote });
       fetchQuestions(); // Refresh question list after vote
     } catch (err) {
       console.error("Vote failed", err);
@@ -67,9 +67,10 @@ export default function Community() {
                         </Link>
                         <p className="text-sm text-gray-500">
                           Asked by:{" "}
-                          <span className="font-medium">
-                            {q.askedBy || "Anonymous"}
-                          </span>
+                          <Link className="font-medium mx-0.5" to ={`/profile-page/${q.askedBy._id}`}>
+                            {q.askedBy.username  || "Anonymous"}
+                          </Link>
+                           <span>{formatDistanceToNow(new Date(q.createdAt), { addSuffix: true })}</span>
                         </p>
                         <div className="mt-2 flex flex-wrap gap-2">
                           {q.tags.map((tag, idx) => (
@@ -87,20 +88,20 @@ export default function Community() {
                       <div className="text-center px-4 flex flex-col items-center gap-2">
                         <button
                           onClick={() => handleVote(q._id, true)}
-                          className="text-green-600 hover:text-green-800 font-bold text-xl"
+                          className="text-green-600 hover:text-green-800 font-bold text-xm"
                           title="Upvote"
                         >
-                          👍
+                         Upvote ⬆️
                         </button>
                         <span className="text-lg font-semibold text-gray-700">
                           {score}
                         </span>
                         <button
                           onClick={() => handleVote(q._id, false)}
-                          className="text-red-600 hover:text-red-800 font-bold text-xl"
+                          className="text-red-600 hover:text-red-800 font-bold text-xm"
                           title="Downvote"
                         >
-                          👎
+                          Downvote ⬇️
                         </button>
                       </div>
                     </div>

@@ -3,7 +3,7 @@ import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import VerifyEmail from "./pages/VerifyEmail.jsx";
 import ResendVerification from "./pages/ResendVerification.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 import GroupChat from "./pages/GroupChat.jsx";
 import AskAI from "./pages/AskAI.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
@@ -50,10 +50,10 @@ const router = createBrowserRouter([
     element: <ResendVerification />,
   },
   {
-    path: "/dashboard",
+    path: "/profile-page/:userId",
     element: (
       <PrivateRoute>
-        <Dashboard />
+        <ProfilePage />
       </PrivateRoute>
     ),
   },

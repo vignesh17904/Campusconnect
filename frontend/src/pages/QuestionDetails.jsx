@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../utils/ApiConfig";
 import NavBar from "../components/Navbar";
-
+import { formatDistanceToNow } from "date-fns";
+import { Link } from "react-router-dom";
 export default function QuestionDetails() {
   const { questionId } = useParams();
   const [question, setQuestion] = useState(null);
@@ -78,7 +79,8 @@ export default function QuestionDetails() {
         <h1 className="text-3xl font-bold mb-2">{question.title}</h1>
         <p className="text-gray-700 mb-4">{question.body}</p>
         <p className="text-sm text-gray-500">
-          Asked by: <span className="font-medium">{question.askedBy?.username || "Anonymous"}</span>
+          Asked by: <Link className="font-medium mx-0.5" to = {`/profile-page/${question.askedBy._id}`} >{question.askedBy?.username || "Anonymous"}</Link>
+            <span>{formatDistanceToNow(new Date(question.createdAt), { addSuffix: true })}</span>
         </p>
 
         <div className="flex gap-2 my-3">
@@ -144,9 +146,11 @@ export default function QuestionDetails() {
           answers.map((ans) => (
             <div key={ans._id} className="bg-gray-100 p-4 rounded-lg mb-4">
               <p>{ans.text}</p>
-              <p className="text-xs text-gray-500 mt-2">
+              <Link className="text-xs text-gray-500 mt-2" to={`/profile-page/${ans.answeredBy._id}`}>
                 Answered by: {ans.answeredBy?.username || "Anonymous"}
-              </p>
+                <span className = "mx-0.5">{formatDistanceToNow(new Date(ans.createdAt), { addSuffix: true })}</span> 
+              </Link>
+              
 
               {/* Answer Vote Buttons */}
               <div className="flex items-center gap-3 mt-2">
