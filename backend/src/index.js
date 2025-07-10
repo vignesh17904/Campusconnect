@@ -1,9 +1,8 @@
 import dotenv from "dotenv";
-import connectDB,{createAdminIfNotExists} from "./db/index.js";
+import connectDB, { createAdminIfNotExists } from "./db/index.js";
 import { app } from "./app.js";
 import http from "http";
 import { Server } from "socket.io";
-import Message from "./models/message.model.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -16,45 +15,36 @@ const io = new Server(server, {
   },
 });
 
+// Socket.io Events
 io.on("connection", (socket) => {
-  console.log("User connected:", socket.id);
+  console.log("✅ User connected:", socket.id);
 
+  // Join Group
   socket.on("joinGroup", (groupId) => {
     socket.join(groupId);
-    console.log(`User ${socket.id} joined group ${groupId}`);
+    console.log(`📥 Socket ${socket.id} joined group ${groupId}`);
   });
 
-  socket.on("sendMessage", async ({ groupId, message, sender }) => {
-    try {
-      const newMsg = await Message.create({
-        group: groupId,
-        sender,
-        message,
-      });
-
-      socket.to(groupId).emit("receiveMessage", {
-        message: newMsg.message,
-        sender: newMsg.sender,
-        time: newMsg.createdAt,
-      });
-    } catch (error) {
-      console.error("Error saving message:", error);
-    }
+  // Send Message (just broadcast; message already saved in controller)
+  socket.on("sendMessage", (messageData) => {
+    const groupId = messageData.group;
+    socket.to(groupId).emit("receiveMessage", messageData);
   });
 
   socket.on("disconnect", () => {
-    console.log("User disconnected:", socket.id);
+    console.log("❌ User disconnected:", socket.id);
   });
 });
 
+// Start Server
 connectDB()
   .then(() => {
     server.listen(process.env.PORT || 8000, () => {
-      console.log(`Server running on port ${process.env.PORT || 8000}`);
+      console.log(`🚀 Server running on port ${process.env.PORT || 8000}`);
+      createAdminIfNotExists();
     });
   })
   .catch((error) => {
-    console.log("Mongo connection failed", error);
+    console.error("❌ Mongo connection failed:", error);
   });
-createAdminIfNotExists()
-  
+

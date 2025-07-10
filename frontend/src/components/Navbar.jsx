@@ -47,7 +47,7 @@ const [menuOpen, setMenuOpen] = useState(false);
           <Link to="/community" className={linkClasses("/community")}>
             Community
           </Link>
-          <Link to={`/profile-page/${user._id}`} className={linkClasses(`/profile-page/${user._id}`)}>
+          <Link to={`/profile-page/${user?._id}`} className={linkClasses(`/profile-page/${user?._id}`)}>
             Profile
           </Link>
           <Link to="/notifications" className={linkClasses("/notifications")}>

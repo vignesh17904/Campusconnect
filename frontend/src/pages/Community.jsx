@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "@/utils/ApiConfig";
 import NavBar from "@/components/Navbar";
 import { formatDistanceToNow } from "date-fns";
+import { ArrowUp, ArrowDown } from "lucide-react";
+
 export default function Community() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
@@ -32,16 +34,16 @@ export default function Community() {
   return (
     <>
       <NavBar />
-      <div className="min-h-screen bg-gray-100 py-6 px-5">
+      <div className="min-h-screen bg-gray-50 py-6 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold">CampusBuzz</h1>
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-3xl font-bold text-indigo-700">CampusBuzz</h1>
             <button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-2xl shadow"
               onClick={() => navigate("/community/question/ask-question")}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-xl transition"
             >
-              Make a post
+              + Ask a Question
             </button>
           </div>
 
@@ -56,27 +58,38 @@ export default function Community() {
                 return (
                   <div
                     key={q._id}
-                    className="bg-white rounded-2xl shadow p-5 hover:shadow-lg transition duration-200"
+                    className="bg-white rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 p-5"
                   >
                     <div className="flex justify-between items-start">
-                      <div>
+                      {/* Main Content */}
+                      <div className="flex-1">
                         <Link to={`/community/question/${q._id}`}>
-                          <h2 className="text-xl font-semibold text-blue-600 hover:underline">
+                          <h2 className="text-xl font-semibold text-indigo-600 hover:underline">
                             {q.title}
                           </h2>
                         </Link>
-                        <p className="text-sm text-gray-500">
-                          Asked by:{" "}
-                          <Link className="font-medium mx-0.5" to ={`/profile-page/${q.askedBy._id}`}>
-                            {q.askedBy.username  || "Anonymous"}
-                          </Link>
-                           <span>{formatDistanceToNow(new Date(q.createdAt), { addSuffix: true })}</span>
-                        </p>
-                        <div className="mt-2 flex flex-wrap gap-2">
+                        <div className="text-sm text-gray-500 mt-1">
+                          <span>
+                            Asked by{" "}
+                            <Link
+                              to={`/profile-page/${q.askedBy._id}`}
+                              className="text-gray-700 font-medium hover:underline"
+                            >
+                              {q.askedBy.username}
+                            </Link>
+                          </span>{" "}
+                          •{" "}
+                          <span>
+                            {formatDistanceToNow(new Date(q.createdAt), {
+                              addSuffix: true,
+                            })}
+                          </span>
+                        </div>
+                        <div className="mt-3 flex flex-wrap gap-2">
                           {q.tags.map((tag, idx) => (
                             <span
                               key={idx}
-                              className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full"
+                              className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full"
                             >
                               #{tag}
                             </span>
@@ -84,24 +97,22 @@ export default function Community() {
                         </div>
                       </div>
 
-                      {/* Voting Section */}
-                      <div className="text-center px-4 flex flex-col items-center gap-2">
+                      {/* Voting */}
+                      <div className="flex flex-col items-center gap-1 ml-4">
                         <button
                           onClick={() => handleVote(q._id, true)}
-                          className="text-green-600 hover:text-green-800 font-bold text-xm"
+                          className="text-green-600 hover:text-green-800 transition"
                           title="Upvote"
                         >
-                         Upvote ⬆️
+                          <ArrowUp className="w-5 h-5" />
                         </button>
-                        <span className="text-lg font-semibold text-gray-700">
-                          {score}
-                        </span>
+                        <span className="font-medium text-gray-700">{score}</span>
                         <button
                           onClick={() => handleVote(q._id, false)}
-                          className="text-red-600 hover:text-red-800 font-bold text-xm"
+                          className="text-red-600 hover:text-red-800 transition"
                           title="Downvote"
                         >
-                          Downvote ⬇️
+                          <ArrowDown className="w-5 h-5" />
                         </button>
                       </div>
                     </div>

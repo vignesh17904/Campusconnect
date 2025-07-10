@@ -1,5 +1,6 @@
-import mongoose,{Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
+// Define the schema
 const messageSchema = new Schema(
   {
     group: {
@@ -8,7 +9,7 @@ const messageSchema = new Schema(
       required: true,
     },
     sender: {
-      type: String, // we store username directly here
+      type: String, // store username directly
       required: true,
     },
     message: {
@@ -19,8 +20,22 @@ const messageSchema = new Schema(
       type: Date,
       default: Date.now,
     },
+    attachments: [
+      {
+        url: {
+          type: String,
+          required: true,
+        },
+        type: {
+          type: String,
+          enum: ["image", "video", "pdf", "raw"],
+          required: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Message", messageSchema);
+// ✅ Prevent model overwrite issue in dev
+export default mongoose.models.Message || mongoose.model("Message", messageSchema);

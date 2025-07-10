@@ -24,7 +24,7 @@ export default function ProfilePage() {
     fetchProfile();
   }, [userId]);
 
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
+  if (loading) return <><NavBar /><div className="text-center mt-10">Loading...</div></>
   if (!profile) return <div className="text-center mt-10 text-red-500">User not found</div>;
 
   const { user, questions, answers } = profile;
