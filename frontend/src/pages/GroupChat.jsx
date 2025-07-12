@@ -97,7 +97,7 @@ export default function GroupChat() {
   const currentGroupName = groups.find((g) => g._id === groupId)?.name;
 
   return (
-    <div className="h-screen w-screen flex flex-col font-sans bg-gray-50">
+    <div className="min-h-screen w-full flex flex-col font-sans bg-gray-50">
       <Navbar />
 
       <div className="flex flex-1 overflow-hidden flex-col md:flex-row">
