@@ -70,7 +70,7 @@ export const getQuestionById = asyncHandler(async (req, res) => {
     );
 });
 
-// ✅ Toggle upvote/downvote for a question
+
 export const voteQuestion = asyncHandler(async (req, res) => {
   const { questionId } = req.params;
   const { isUpvote } = req.body;

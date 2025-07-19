@@ -21,7 +21,7 @@ const createAdminIfNotExists = async () => {
       password: process.env.ADMIN_PASSWORD,
       role: "admin",
       isGoogleUser: false,
-      isVerified: true,
+      emailVerified: true,
       branch :"EEE",
       year: "4",
       rollNumber: "123456",

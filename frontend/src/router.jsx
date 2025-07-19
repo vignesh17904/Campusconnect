@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import VerifyEmail from "./pages/VerifyEmail.jsx";
@@ -12,30 +12,17 @@ import Notifications from "./pages/Notifications.jsx";
 import QuestionDetails from "./pages/QuestionDetails.jsx";
 import Community from "./pages/Community.jsx";
 import AskQuestion from "./pages/AskQuestion.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
+import { useUser } from "./context/UserContext.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
   {
-    path: "/notifications",
-    element: (
-      <PrivateRoute>
-        <Notifications />
-      </PrivateRoute>
-    ),
-  },
-  {
     path: "/signup",
     element: <SignUp />,
-  },
-  {
-    path:"/community",
-    element:(
-      <PrivateRoute>
-        <Community />
-      </PrivateRoute>
-    )
   },
   {
     path: "/login",
@@ -50,10 +37,26 @@ const router = createBrowserRouter([
     element: <ResendVerification />,
   },
   {
+    path: "/notifications",
+    element: (
+      <PrivateRoute>
+        <Notifications />
+      </PrivateRoute>
+    ),
+  },
+  {
     path: "/profile-page/:userId",
     element: (
       <PrivateRoute>
         <ProfilePage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/community",
+    element: (
+      <PrivateRoute>
+        <Community />
       </PrivateRoute>
     ),
   },
@@ -65,11 +68,11 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
   },
-   {
+  {
     path: "/community/question/ask-question",
     element: (
       <PrivateRoute>
-       <AskQuestion />
+        <AskQuestion />
       </PrivateRoute>
     ),
   },
@@ -90,9 +93,25 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/admin",
+    element: (
+      <PrivateRoute>
+        <AdminWrapper />
+      </PrivateRoute>
+    ),
+  },
+  {
     path: "*",
     element: <PageNotFound />,
   },
 ]);
+
+function AdminWrapper() {
+  const { user } = useUser();
+  if (user?.role !== "admin") {
+    return <Navigate to="/" replace />;
+  }
+  return <AdminDashboard />;
+}
 
 export default router;

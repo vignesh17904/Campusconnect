@@ -33,5 +33,7 @@ import questionRouter from "./routes/question.routes.js";
 app.use("/api/questions", questionRouter);
 import answerRouter from "./routes/answer.routes.js";
 app.use("/api/answers", answerRouter);
+import adminRoutes from "./routes/admin.routes.js";
+app.use("/api/admin", adminRoutes);
 
 export { app };

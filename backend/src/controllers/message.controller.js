@@ -15,7 +15,7 @@ export const sendMessageWithAttachment = asyncHandler(async (req, res) => {
       if (result) {
         attachments.push({
           url: result.secure_url,
-          type: result.resource_type, // "image", "video", etc.
+          type:  result.resource_type, // "image", "video", etc.
         });
         if(!result){
           throw new ApiError(500, `upload file to cloudinary failed`);
