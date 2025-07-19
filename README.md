@@ -48,6 +48,7 @@ CampusConnect emphasizes collaborative learning in academic groups, replicating 
 ```bash
 cd backend
 npm install
+npm start
 # Add your .env file with:
 # - MONGODB_URI
 # - JWT_SECRET
@@ -58,7 +59,7 @@ npm install
 
 
 ### Frontend
-npm start
+
 cd frontend
 npm install
 npm run dev
