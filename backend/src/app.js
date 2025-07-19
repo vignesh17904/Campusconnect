@@ -35,5 +35,9 @@ import answerRouter from "./routes/answer.routes.js";
 app.use("/api/answers", answerRouter);
 import adminRoutes from "./routes/admin.routes.js";
 app.use("/api/admin", adminRoutes);
+import aiRoutes from "./routes/ai.routes.js";
+app.use("/api/ai", aiRoutes);
+
+
 
 export { app };

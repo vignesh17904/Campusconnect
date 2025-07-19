@@ -4,7 +4,7 @@ import axiosInstance from "@/utils/ApiConfig";
 import NavBar from "@/components/Navbar";
 import { formatDistanceToNow } from "date-fns";
 import { ArrowUp, ArrowDown } from "lucide-react";
-
+import ChatbotLauncher from "@/components/chatbot/ChatbotLauncher.jsx";
 export default function Community() {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
@@ -122,6 +122,7 @@ export default function Community() {
             </div>
           )}
         </div>
+        <ChatbotLauncher />
       </div>
     </>
   );
