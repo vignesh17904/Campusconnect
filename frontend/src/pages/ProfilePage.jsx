@@ -24,14 +24,14 @@ export default function ProfilePage() {
     fetchProfile();
   }, [userId]);
 
-  if (loading) return <><NavBar /><div className="text-center mt-10">Loading...</div></>
+  if (loading) return <><div className="text-center mt-10">Loading...</div></>
   if (!profile) return <div className="text-center mt-10 text-red-500">User not found</div>;
 
   const { user, questions, answers } = profile;
 
   return (
     <>
-    <NavBar />
+    
     <div className="min-h-screen bg-gray-50 py-6 px-4">
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow">
         <h1 className="text-3xl font-bold text-indigo-600 mb-6">User Profile</h1>

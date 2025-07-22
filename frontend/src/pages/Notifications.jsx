@@ -44,7 +44,7 @@ export default function Notifications() {
 
         </div>
       </nav> */}
-      <Navbar />
+     
 
 
       {/* Notifications */}

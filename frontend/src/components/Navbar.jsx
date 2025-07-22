@@ -25,7 +25,7 @@ export default function Navbar() {
       console.error("Logout failed:", err);
     }
   };
- if (user == undefined) return null;
+ if (user === undefined) return null;
   return (
     <nav className="bg-white border-b border-gray-200 shadow px-6 py-3 w-full">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
