@@ -10,5 +10,5 @@ router.route("/logout").post(verifyJWT, logoutUser);
 router.route("/refresh").post(refreshAccessToken);
 router.post("/resend-verification", resendVerificationEmail);
 router.get("/get-user", verifyJWT, getUser);
-router.get("/:userId", verifyJWT, getUserById);
+router.get("/profile", verifyJWT, getUserById);
 export default router;

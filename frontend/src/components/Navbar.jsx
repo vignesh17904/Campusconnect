@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useUser } from "@/context/UserContext";
 
 export default function Navbar() {
-  const { user } = useUser();
+  const { user,loading } = useUser();
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,9 @@ export default function Navbar() {
       console.error("Logout failed:", err);
     }
   };
+
  if (user === undefined) return null;
+ if (loading) return null; 
   return (
     <nav className="bg-white border-b border-gray-200 shadow px-6 py-3 w-full">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -48,12 +50,14 @@ export default function Navbar() {
           <Link to="/community" className={linkClasses("/community")}>
             Community
           </Link>
-          <Link
-            to={`/profile-page/${user?._id}`}
-            className={linkClasses(`/profile-page/${user?._id}`)}
-          >
-            Profile
-          </Link>
+         
+  <Link
+    to={`/profile-page`}
+    className={linkClasses(`/profile-page`)}
+  >
+    Profile
+  </Link>
+
           <Link to="/notifications" className={linkClasses("/notifications")}>
             Notifications
           </Link>
@@ -89,8 +93,8 @@ export default function Navbar() {
             Community
           </Link>
           <Link
-            to={`/profile-page/${user?._id}`}
-            className={linkClasses(`/profile-page/${user?._id}`)}
+            to={`/profile-page`}
+            className={linkClasses(`/profile-page`)}
             onClick={() => setMenuOpen(false)}
           >
             Profile

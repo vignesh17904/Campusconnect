@@ -34,10 +34,11 @@ const router = createBrowserRouter([
 
   // Protected routes with shared layout
   {
-    element: <PrivateRoute><MainLayout /></PrivateRoute>,
+    element: <PrivateRoute><MainLayout />
+</PrivateRoute>,
     children: [
       { path: "/notifications", element: <Notifications /> },
-      { path: "/profile-page/:userId", element: <ProfilePage /> },
+      { path: "/profile-page", element: <ProfilePage /> },
       { path: "/community", element: <Community /> },
       { path: "/community/question/:questionId", element: <QuestionDetails /> },
       { path: "/community/question/ask-question", element: <AskQuestion /> },

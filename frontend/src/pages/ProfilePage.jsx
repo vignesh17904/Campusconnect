@@ -12,7 +12,7 @@ export default function ProfilePage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axiosInstance.get(`/users/${userId}`);
+        const res = await axiosInstance.get(`/users/profile`)
         setProfile(res.data.data);
       } catch (err) {
         console.error("Failed to fetch profile", err);
