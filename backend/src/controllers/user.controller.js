@@ -134,6 +134,7 @@ const group = await Group.findOneAndUpdate(
   const options = {
     httpOnly: true,
     secure: true,
+    sameSite: "None"
   };
 
   res
@@ -180,6 +181,7 @@ const login = asyncHandler(async (req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+     sameSite: "None"
   };
 
   return res
@@ -211,6 +213,7 @@ const logoutUser = asyncHandler(async(req, res) => {
   const options = {
     httpOnly: true,
     secure: true,
+     sameSite: "None"
   };
 
   return res
@@ -247,6 +250,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     const options = {
       httpOnly: true,
       secure: true,
+       sameSite: "None"
     };
 
     return res
