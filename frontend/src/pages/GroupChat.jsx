@@ -6,7 +6,7 @@ import CreateGroupModal from "@/components/CreateGroupModal";
 import JoinGroupModal from "@/components/JoinGroupModal";
 import Navbar from "@/components/Navbar";
 
-const socket = io("http://localhost:8000", { withCredentials: true });
+const socket = io(import.meta.env.VITE_SOCKET_URL, { withCredentials: true });
 
 const SendIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
