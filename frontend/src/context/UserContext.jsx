@@ -11,17 +11,25 @@ export const UserProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axiosInstance.get("/users/get-user"); 
+      const res = await axiosInstance.get("/users/get-user");
       setUser(res.data.data);
     } catch (err) {
       console.error("Failed to fetch user", err);
+      setUser(null);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchUser();
+    const hasAuthCookie = document.cookie.includes("refreshToken");
+
+    // 👇 Only try fetching user if token cookie exists
+    if (hasAuthCookie) {
+      fetchUser();
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   return (
