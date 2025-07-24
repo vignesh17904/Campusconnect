@@ -79,7 +79,7 @@ export default function QuestionDetails() {
         <h1 className="text-3xl font-bold mb-2">{question.title}</h1>
         <p className="text-gray-700 mb-4">{question.body}</p>
         <p className="text-sm text-gray-500">
-          Asked by: <Link className="font-medium mx-0.5" to = {`/profile-page/${question.askedBy._id}`} >{question.askedBy?.username || "Anonymous"}</Link>
+          Asked by: <Link className="font-medium mx-0.5" to = {`/user-profile-page/${question.askedBy._id}`} >{question.askedBy?.username || "Anonymous"}</Link>
             <span>{formatDistanceToNow(new Date(question.createdAt), { addSuffix: true })}</span>
         </p>
 
@@ -146,7 +146,7 @@ export default function QuestionDetails() {
           answers.map((ans) => (
             <div key={ans._id} className="bg-gray-100 p-4 rounded-lg mb-4">
               <p>{ans.text}</p>
-              <Link className="text-xs text-gray-500 mt-2" to={`/profile-page/${ans.answeredBy._id}`}>
+              <Link className="text-xs text-gray-500 mt-2" to={`/user-profile-page/${ans.answeredBy._id}`}>
                 Answered by: {ans.answeredBy?.username || "Anonymous"}
                 <span className = "mx-0.5">{formatDistanceToNow(new Date(ans.createdAt), { addSuffix: true })}</span> 
               </Link>

@@ -11,7 +11,20 @@ import crypto from "crypto";
 import { sendEmail } from "../utils/sendEmail.js";
 import { Question } from "../models/question.model.js";
 import { Answer } from "../models/answer.model.js";
-export const getUserById = asyncHandler(async (req, res) => {
+ const getUserById = asyncHandler(async (req, res) => {
+  const userId = req.params.userId;
+
+  const user = await User.findById(userId).select("username email reputation branch year rollNumber ");
+  if (!user) throw new ApiError(404, "User not found");
+
+  const questions = await Question.find({ askedBy: userId }).select("title tags createdAt");
+  const answers = await Answer.find({ answeredBy: userId }).select("text question createdAt");
+
+  return res.status(200).json(
+    new ApiResponse(200, { user, questions, answers }, "User profile fetched")
+  );
+});
+const getUserProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
 
   const user = await User.findById(userId).select("username email reputation branch year rollNumber ");
@@ -317,5 +330,7 @@ export {
     getUser,
     generateAccessandRefreshtokens,
     verifyEmail,
-    resendVerificationEmail
+    resendVerificationEmail,
+    getUserProfile,
+    getUserById
 }

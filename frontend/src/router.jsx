@@ -15,7 +15,7 @@ import AskQuestion from "./pages/AskQuestion.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import MainLayout from "./Layout/MainLayout.jsx";
 import { useUser } from "./context/UserContext.jsx";
-
+import UserProfilePage from "./pages/UserProfilePage.jsx";
 function AdminWrapper() {
   const { user } = useUser();
   if (user?.role !== "admin") {
@@ -39,6 +39,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/notifications", element: <Notifications /> },
       { path: "/profile-page", element: <ProfilePage /> },
+      { path: "/user-profile-page/:userId", element: <UserProfilePage /> },
       { path: "/community", element: <Community /> },
       { path: "/community/question/:questionId", element: <QuestionDetails /> },
       { path: "/community/question/ask-question", element: <AskQuestion /> },

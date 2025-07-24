@@ -72,7 +72,7 @@ export default function Community() {
                           <span>
                             Asked by{" "}
                             <Link
-                              to={`/profile-page/${q.askedBy._id}`}
+                              to={`/user-profile-page/${q.askedBy._id}`}
                               className="text-gray-700 font-medium hover:underline"
                             >
                               {q.askedBy.username}
