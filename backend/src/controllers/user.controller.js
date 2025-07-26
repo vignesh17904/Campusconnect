@@ -27,7 +27,7 @@ import { Answer } from "../models/answer.model.js";
 const getUserProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
 
-  const user = await User.findById(userId).select("username email reputation branch year rollNumber ");
+  const user = await User.findById(userId).select("username email reputation branch year rollNumber role ");
   if (!user) throw new ApiError(404, "User not found");
 
   const questions = await Question.find({ askedBy: userId }).select("title tags createdAt");

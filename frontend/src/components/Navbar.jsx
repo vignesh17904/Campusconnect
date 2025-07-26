@@ -6,6 +6,7 @@ import { useUser } from "@/context/UserContext";
 
 export default function Navbar() {
   const { user,loading } = useUser();
+  console.log("User from context: ", user);
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,11 +62,11 @@ export default function Navbar() {
           <Link to="/notifications" className={linkClasses("/notifications")}>
             Notifications
           </Link>
-          {user?.role === "admin" && (
+          {/*user?.role === "admin" && (
             <Link to="/admin" className={linkClasses("/admin")}>
               Admin
             </Link>
-          )}
+          )*/}
           <button
             onClick={handleLogout}
             className="px-3 py-1 text-sm bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"

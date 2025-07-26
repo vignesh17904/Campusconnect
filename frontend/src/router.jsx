@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       { path: "/community/question/ask-question", element: <AskQuestion /> },
       { path: "/group-chat", element: <GroupChat /> },
       { path: "/ask-ai", element: <AskAI /> },
-      { path: "/admin", element: <AdminWrapper /> },
+      { path: "/admin", element: <AdminDashboard /> },
     ],
   },
 

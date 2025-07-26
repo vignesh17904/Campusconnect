@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axiosInstance.get("/users/get-user");
+      const res = await axiosInstance.get("/users/profile");
       setUser(res.data.data);
     } catch (err) {
       console.error("Failed to fetch user", err);
